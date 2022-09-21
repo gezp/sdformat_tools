@@ -6,26 +6,7 @@ import re
 import xml.dom.minidom
 import xmacro.xml_format
 from xmacro.xmacro import XMLMacro
-
-xmacro_paths = []
-if os.getenv("IGN_GAZEBO_RESOURCE_PATH") is not None:
-    xmacro_paths = xmacro_paths+os.getenv("IGN_GAZEBO_RESOURCE_PATH").split(":")
-if os.getenv("GAZEBO_MODEL_PATH") is not None:
-    xmacro_paths = xmacro_paths+os.getenv("GAZEBO_MODEL_PATH").split(":")
-
-def parse_model_uri(uri):
-    result = ""
-    splited_str=uri.split("://")
-    if len(splited_str)!=2:
-        return result
-    # get absolute path according to uri
-    if splited_str[0]  == "model":
-        for tmp_path in xmacro_paths:
-            tmp_path = os.path.join(tmp_path,splited_str[1])
-            if(os.path.isfile(tmp_path)):
-                result = tmp_path
-                break
-    return result
+from .sdf_util import parse_model_uri
 
 class XMLMacro4sdf(XMLMacro):
     def __init__(self):
@@ -40,7 +21,6 @@ def xmacro4sdf_main():
         print("Usage: xmacro4sdf <inputfile> (the name of inputfile must be xxx.xmacro)")
         return -1
     inputfile = sys.argv[1]
-    outputfile = os.path.splitext(inputfile)[0]
     # check
     if os.path.splitext(inputfile)[1] != '.xmacro':
         print("Error: the name of inputfile must be xxx.xmacro")

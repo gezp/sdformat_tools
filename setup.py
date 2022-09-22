@@ -22,12 +22,13 @@ setup(
         'Programming Language :: Python',
         'Topic :: Software Development',
     ],
-    description='Examples of minimal publishers using rclpy.',
+    description='sdformat tools.',
     license='Apache License, Version 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'xmacro4sdf = sdformat_tools.xmacro4sdf:xmacro4sdf_main',
+            'sdf2urdf = sdformat_tools.sdf2urdf:sdf2urdf_main',
         ]
     },
 )

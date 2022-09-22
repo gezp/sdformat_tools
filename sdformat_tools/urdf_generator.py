@@ -21,7 +21,7 @@ class UrdfGenerator():
                 and node.getAttribute("name") == name :
                 root.removeChild(node)
 
-    def __extend_urdf_doc(self, doc):
+    def __merge_urdf_doc(self, doc):
         if self.out_doc is None:
             return
         root = doc.documentElement
@@ -48,13 +48,13 @@ class UrdfGenerator():
         with open(filepath, "r") as f:
             self.parse_from_sdf_string(f.read())
 
-    def extend_urdf_file(self, filepath):
+    def merge_urdf_file(self, filepath):
         doc = xml.dom.minidom.parse(filepath)
-        self.__extend_urdf_doc(doc)
+        self.__merge_urdf_doc(doc)
 
-    def extend_urdf_string(self, xml_str):
+    def merge_urdf_string(self, xml_str):
         doc = xml.dom.minidom.parseString(xml_str)
-        self.__extend_urdf_doc(doc)
+        self.__merge_urdf_doc(doc)
 
     def remove_link(self, link_name):
         self.__remove_node('link', link_name)

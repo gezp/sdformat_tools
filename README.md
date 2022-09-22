@@ -1,6 +1,6 @@
 # sdformat tools
 
-Sdformat (SDF) is used by Gazebo to create simulated robots and simulated environment (sim world). As ROS users, we know URDF is more common to describe robot's geometry, kinematic and dynamic properties in ROS community, which is used by many ROS applications like rviz, moveit, robot_state_publisher.
+Sdformat (SDF) is used by Gazebo to describe simulated robots and simulated environment (sim world). As ROS users, we know URDF is more common to describe robot's geometry, kinematic and dynamic properties in ROS community, which is used by many ROS applications like rviz, moveit, robot_state_publisher.
 
 this package provides some easy, convenient and flexible tools to help us make the best use of SDF in ROS community:
 

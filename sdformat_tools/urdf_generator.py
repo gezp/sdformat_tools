@@ -8,7 +8,6 @@ from .sdf2urdf import sdf_to_urdf
 
 class UrdfGenerator():
     def __init__(self):
-        self.tool_name = "urdf_generator"
         self.out_doc = None
 
     def __remove_node(self, tag_name, name):

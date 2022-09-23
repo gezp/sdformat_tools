@@ -13,7 +13,6 @@ a workflow of using SDF in ROS community with these tools:
 ![](workflow.png)
 
 
-
 ## Usage
 
 Installation
@@ -29,13 +28,13 @@ colcon build
 xmacro4sdf
 
 ```bash
-ros2 run sdformat_tools xmacro4sdf model.sdf.xmacro
+xmacro4sdf model.sdf.xmacro
 ```
 
 sdf2urdf
 
 ```bash
-ros2 run sdformat_tools sdf2urdf model.sdf
+sdf2urdf model.sdf
 ```
 
 urdf_generator

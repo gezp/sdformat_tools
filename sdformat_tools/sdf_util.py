@@ -9,7 +9,7 @@ if os.getenv("GAZEBO_MODEL_PATH") is not None:
     sdf_paths = sdf_paths+os.getenv("GAZEBO_MODEL_PATH").split(":")
 
 def get_model_directory(model_name):
-    for tmp_dir in xmacro_paths:
+    for tmp_dir in sdf_paths:
         model_directory = os.path.join(tmp_dir, model_name)
         if(os.path.isdir(model_directory)):
             return model_directory

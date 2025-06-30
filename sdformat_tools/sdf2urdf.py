@@ -50,7 +50,7 @@ def convert_geometry(in_node, out_doc, out_parent_node):
             elif child.tagName == 'sphere':
                 radius_node = get_child_node_by_tag(child, 'radius')
                 new_sphere_node = create_child_node(out_doc, new_node, 'sphere')
-                new_sphere_node.setAttribute('radius', size_node.firstChild.data)
+                new_sphere_node.setAttribute('radius', radius_node.firstChild.data)
                 return True
     return False
 
